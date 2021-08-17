@@ -12,7 +12,7 @@
 
     <groupId>geekdisplaced.learning</groupId>
     <artifactId>geek-pet-clinic</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2-SNAPSHOT</version>
 
     <modules>
         <module>module-data</module>
@@ -49,7 +49,7 @@
 
     <scm>
         <developerConnection>scm:git:git@github.com:GeekDisplaced/geek-pet-clinic.git</developerConnection>
-      <tag>geek-pet-clinic-0.0.1</tag>
+      <tag>HEAD</tag>
   </scm>
 
 </project>
