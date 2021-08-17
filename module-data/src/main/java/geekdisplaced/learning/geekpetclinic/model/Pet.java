@@ -2,7 +2,7 @@ package geekdisplaced.learning.geekpetclinic.model;
 
 import java.util.Date;
 
-public class Pet {
+public class Pet extends BaseEntity {
 
     private PetType petype;
     private Owner owner;
