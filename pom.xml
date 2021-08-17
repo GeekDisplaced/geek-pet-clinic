@@ -2,15 +2,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-    <modelVersion>4.0.0</modelVersion>
-
-    <packaging>pom</packaging>
-
-    <modules>
-        <module>module-data</module>
-        <module>module-web</module>
-    </modules>
-
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -18,17 +9,25 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
+    <modelVersion>4.0.0</modelVersion>
+
     <groupId>geekdisplaced.learning</groupId>
-
     <artifactId>geek-pet-clinic</artifactId>
-
     <version>0.0.1-SNAPSHOT</version>
 
-    <name>geek-pet-clinic</name>
+    <modules>
+        <module>module-data</module>
+        <module>module-web</module>
+    </modules>
 
+    <packaging>pom</packaging>
+
+    <name>geek-pet-clinic</name>
     <description>geek-pet-clinic</description>
 
     <properties>
+        <!--project.build.sourceEncoding>UTF-8</project.build.sourceEncoding-->
+        <!--project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding-->
         <java.version>11</java.version>
     </properties>
 
@@ -37,16 +36,20 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
                 <configuration>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
+                    <goals>install</goals>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+
+    <scm>
+        <developerConnection>scm:git:git@github.com:GeekDisplaced/geek-pet-clinic.git</developerConnection>
+    </scm>
 
 </project>
