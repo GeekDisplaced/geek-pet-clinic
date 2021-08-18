@@ -2,9 +2,11 @@ package geekdisplaced.learning.geekpetclinic.services.map;
 
 import geekdisplaced.learning.geekpetclinic.model.Owner;
 import geekdisplaced.learning.geekpetclinic.services.OwnerService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class MapOwnerService extends AbstractMapService<Owner, Long> implements OwnerService {
 
     @Override

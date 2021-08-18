@@ -2,9 +2,11 @@ package geekdisplaced.learning.geekpetclinic.services.map;
 
 import geekdisplaced.learning.geekpetclinic.model.Pet;
 import geekdisplaced.learning.geekpetclinic.services.PetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class MapPetService extends AbstractMapService<Pet, Long> implements PetService {
 
     @Override
