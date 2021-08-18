@@ -1,13 +1,11 @@
 package geekdisplaced.learning.geekpetclinic.services.map;
 
 import geekdisplaced.learning.geekpetclinic.model.Pet;
-import geekdisplaced.learning.geekpetclinic.services.CrudService;
 import geekdisplaced.learning.geekpetclinic.services.PetService;
-import geekdisplaced.learning.geekpetclinic.services.map.AbstractMapService;
 
 import java.util.Set;
 
-public class MapPetService extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
+public class MapPetService extends AbstractMapService<Pet, Long> implements PetService {
 
     @Override
     public Set<Pet> findAll() {

@@ -1,12 +1,11 @@
 package geekdisplaced.learning.geekpetclinic.services.map;
 
 import geekdisplaced.learning.geekpetclinic.model.Owner;
-import geekdisplaced.learning.geekpetclinic.services.CrudService;
 import geekdisplaced.learning.geekpetclinic.services.OwnerService;
 
 import java.util.Set;
 
-public class MapOwnerService extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long> {
+public class MapOwnerService extends AbstractMapService<Owner, Long> implements OwnerService {
 
     @Override
     public Set<Owner> findAll() {
@@ -38,4 +37,8 @@ public class MapOwnerService extends AbstractMapService<Owner, Long> implements 
         super.deleteById(id);
     }
 
+    @Override
+    public Owner findByLastName(String lastName) {
+        return null;
+    }
 }
