@@ -1,15 +1,16 @@
 package geekdisplaced.learning.geekpetclinic.web.bootstrap;
 
 import geekdisplaced.learning.geekpetclinic.model.Owner;
+import geekdisplaced.learning.geekpetclinic.model.Pet;
+import geekdisplaced.learning.geekpetclinic.model.PetType;
 import geekdisplaced.learning.geekpetclinic.model.Vet;
 import geekdisplaced.learning.geekpetclinic.services.OwnerService;
 import geekdisplaced.learning.geekpetclinic.services.PetService;
 import geekdisplaced.learning.geekpetclinic.services.VetService;
-import geekdisplaced.learning.geekpetclinic.services.map.MapOwnerService;
-import geekdisplaced.learning.geekpetclinic.services.map.MapPetService;
-import geekdisplaced.learning.geekpetclinic.services.map.MapVetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -27,7 +28,7 @@ public class DataLoader implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        // Manually coppied from guru repo.
+        // Manually copied from guru repo.
 
         Owner owner1 = new Owner();
         owner1.setId(1L);
@@ -57,9 +58,26 @@ public class DataLoader implements CommandLineRunner {
         vet2.setFirstName("Jessie");
         vet2.setLastName("Porter");
 
-        vetService.save(vet1);
+        vetService.save(vet2);
 
         System.out.println("Loaded Vets....");
+
+        Pet pet1 = new Pet();
+        pet1.setId(1L);
+        pet1.setName("Fluffy");
+        pet1.setPetType(new PetType("Cat"));
+        pet1.setBirthDate(LocalDate.of(2017,5,1));
+        petService.save(pet1);
+
+        Pet pet2 = new Pet();
+        pet2.setId(2L);
+        pet2.setName("Butch");
+        pet2.setPetType(new PetType("Dog"));
+        pet2.setBirthDate(LocalDate.of(2017,5,1));
+
+        petService.save(pet2);
+
+        System.out.println("Loaded Pets....");
 
     }
 }

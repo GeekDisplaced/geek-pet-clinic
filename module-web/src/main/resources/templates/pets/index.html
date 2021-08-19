@@ -8,6 +8,30 @@
     <title>Pet Clinic - Pets Index</title>
 </head>
 <body>
-    <h1 th:text="'Pets Index Page'">HTML Index Page</h1>
+
+    <!--/*@thymesVar id-"pets' type="guru.springframework.sfgpetclinic.model.Pet" */-->
+
+    <h1 th:text="'Thymeleaf Vets Index Page'">HTML Pets Index Page</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Birth Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="pet : ${pets}">
+            <td th:text="${pet?.id}"></td>
+            <td th:text="${pet?.name}"></td>
+            <td th:text="${pet?.type.name}"></td>
+            <td th:text="${pet?.birthDate}"></td>
+        </tr>
+        </tbody>
+
+    </table>
+
 </body>
 </html>

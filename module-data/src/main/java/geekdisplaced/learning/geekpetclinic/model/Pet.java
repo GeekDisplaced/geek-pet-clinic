@@ -1,25 +1,28 @@
 package geekdisplaced.learning.geekpetclinic.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Pet extends BaseEntity {
 
-    private PetType petype;
+    private String name;
+    private PetType type;
     private Owner owner;
-    private Date birthDate;
+    private LocalDate birthDate;
 
-    public Pet(PetType petype, Owner owner, Date birthDate) {
-        this.petype = petype;
-        this.owner = owner;
-        this.birthDate = birthDate;
+    public String getName() {
+        return name;
     }
 
-    public PetType getPetype() {
-        return petype;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setPetype(PetType petype) {
-        this.petype = petype;
+    public PetType getType() {
+        return type;
+    }
+
+    public void setPetType(PetType petType) {
+        this.type = petType;
     }
 
     public Owner getOwner() {
@@ -30,11 +33,11 @@ public class Pet extends BaseEntity {
         this.owner = owner;
     }
 
-    public Date getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 }
