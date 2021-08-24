@@ -49,16 +49,41 @@ public class DataLoader implements CommandLineRunner {
         Owner owner1 = new Owner();
         owner1.setFirstName("Michael");
         owner1.setLastName("Weston");
+        owner1.setAddress("1 Infinite Loop");
+        owner1.setCity("Silicon Vally");
+        owner1.setTelephone("555-98721387431207");
+
+        Pet pet1 = new Pet();
+        pet1.setName("Fluffy");
+        pet1.setType(savedCatPetType);
+        pet1.setBirthDate(LocalDate.of(2017,5,1));
+
+        // petService.save(pet1);
+
+        owner1.getPets().add(pet1);
 
         ownerService.save(owner1);
 
         Owner owner2 = new Owner();
         owner2.setFirstName("Fiona");
         owner2.setLastName("Glenanne");
+        owner2.setAddress("1 Infinite Loop");
+        owner2.setCity("Silicon Vally");
+        owner2.setTelephone("555-98721387431207");
+
+        Pet pet2 = new Pet();
+        pet2.setName("Butch");
+        pet2.setType(savedDogPetType);
+        pet2.setBirthDate(LocalDate.of(2017,5,1));
+
+        // petService.save(pet2);
+
+        owner2.getPets().add(pet2);
 
         ownerService.save(owner2);
 
-        System.out.println("Loaded Owners... bootstrap data");
+        // System.out.println("Loaded Pets... bootstrap data");
+        System.out.println("Loaded Owners with Pets... bootstrap data");
 
         Vet vet1 = new Vet();
         vet1.setFirstName("Sam");
@@ -74,20 +99,11 @@ public class DataLoader implements CommandLineRunner {
 
         System.out.println("Loaded Vets... bootstrap data");
 
-        Pet pet1 = new Pet();
-        pet1.setName("Fluffy");
-        pet1.setPetType(new PetType("Cat"));
-        pet1.setBirthDate(LocalDate.of(2017,5,1));
-        petService.save(pet1);
 
-        Pet pet2 = new Pet();
-        pet2.setName("Butch");
-        pet2.setPetType(new PetType("Dog"));
-        pet2.setBirthDate(LocalDate.of(2017,5,1));
 
-        petService.save(pet2);
 
-        System.out.println("Loaded Pets... bootstrap data");
+
+
 
     }
 }
