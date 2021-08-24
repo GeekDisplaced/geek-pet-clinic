@@ -6,6 +6,7 @@ import geekdisplaced.learning.geekpetclinic.model.PetType;
 import geekdisplaced.learning.geekpetclinic.model.Vet;
 import geekdisplaced.learning.geekpetclinic.services.OwnerService;
 import geekdisplaced.learning.geekpetclinic.services.PetService;
+import geekdisplaced.learning.geekpetclinic.services.PetTypeService;
 import geekdisplaced.learning.geekpetclinic.services.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -18,15 +19,30 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
     private final PetService petService;
+    private final PetTypeService petTypeService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetService petService) {
+
+    public DataLoader(OwnerService ownerService, VetService vetService, PetService petService, PetTypeService petTypeService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petService = petService;
+        this.petTypeService = petTypeService;
     }
 
     @Override
     public void run(String... args) throws Exception {
+
+        PetType dog = new PetType();
+        dog.setName("Dog");
+
+        PetType savedDogPetType = petTypeService.save(dog);
+
+        PetType cat = new PetType();
+        cat.setName("Cat");
+
+        PetType savedCatPetType = petTypeService.save(cat);
+
+        System.out.println("Loaded Pet Types... bootstrap data");
 
         // Manually copied from guru repo.
 
@@ -42,7 +58,7 @@ public class DataLoader implements CommandLineRunner {
 
         ownerService.save(owner2);
 
-        System.out.println("Loaded Owners....");
+        System.out.println("Loaded Owners... bootstrap data");
 
         Vet vet1 = new Vet();
         vet1.setFirstName("Sam");
@@ -56,7 +72,7 @@ public class DataLoader implements CommandLineRunner {
 
         vetService.save(vet2);
 
-        System.out.println("Loaded Vets....");
+        System.out.println("Loaded Vets... bootstrap data");
 
         Pet pet1 = new Pet();
         pet1.setName("Fluffy");
@@ -71,7 +87,7 @@ public class DataLoader implements CommandLineRunner {
 
         petService.save(pet2);
 
-        System.out.println("Loaded Pets....");
+        System.out.println("Loaded Pets... bootstrap data");
 
     }
 }
