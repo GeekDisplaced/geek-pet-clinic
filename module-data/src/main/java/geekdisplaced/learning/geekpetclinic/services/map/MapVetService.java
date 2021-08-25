@@ -1,6 +1,8 @@
 package geekdisplaced.learning.geekpetclinic.services.map;
 
+import geekdisplaced.learning.geekpetclinic.model.Specialty;
 import geekdisplaced.learning.geekpetclinic.model.Vet;
+import geekdisplaced.learning.geekpetclinic.services.SpecialtyService;
 import geekdisplaced.learning.geekpetclinic.services.VetService;
 import org.springframework.stereotype.Service;
 
@@ -8,6 +10,8 @@ import java.util.Set;
 
 @Service
 public class MapVetService extends AbstractMapService<Vet, Long> implements VetService {
+
+    SpecialtyService specialtyService;
 
     @Override
     public Set<Vet> findAll() {
@@ -21,7 +25,29 @@ public class MapVetService extends AbstractMapService<Vet, Long> implements VetS
 
     @Override
     public Vet save(Vet object) {
-        return super.save(object);
+
+        if (object != null) {
+
+            // if there are Specialties relationships must be confirmed...
+            if (object.getSpecialties() != null) {
+
+                object.getSpecialties().forEach( specialty -> {
+
+                    // check Specialty relationship / id sync
+                    if (specialty.getId() == null) {
+                        Specialty savedSpecialty = specialtyService.save(specialty);
+                        specialty.setId(savedSpecialty.getId());
+                    }
+
+                });
+            }
+
+            return super.save(object);
+        } else {
+
+            return null;
+        }
+
     }
 
     @Override

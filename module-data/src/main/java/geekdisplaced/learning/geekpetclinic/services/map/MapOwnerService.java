@@ -37,7 +37,7 @@ public class MapOwnerService extends AbstractMapService<Owner, Long> implements 
 
         if(object != null ) {
 
-            // if there are pets relationships must be confirmed...
+            // if there are Pets relationships must be confirmed...
             if(object.getPets() != null) {
 
                 object.getPets().forEach( pet -> {
