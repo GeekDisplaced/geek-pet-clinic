@@ -29,7 +29,7 @@ public class MapVetService extends AbstractMapService<Vet, Long> implements VetS
         if (object != null) {
 
             // if there are Specialties relationships must be confirmed...
-            if (object.getSpecialties() != null) {
+            if (object.getSpecialties().size() > 0) {
 
                 object.getSpecialties().forEach( specialty -> {
 
