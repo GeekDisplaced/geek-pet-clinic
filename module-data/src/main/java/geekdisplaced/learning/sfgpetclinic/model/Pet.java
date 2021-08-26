@@ -1,12 +1,26 @@
 package geekdisplaced.learning.sfgpetclinic.model;
 
+import org.hibernate.annotations.CollectionId;
+
+import javax.persistence.*;
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "pets")
 public class Pet extends NamedEntity {
 
-    private PetType type;
-    private Owner owner;
+    @Column(name = "birth_date")
     private LocalDate birthDate;
+
+
+    @OneToOne
+    @JoinColumn(name = "type_id")
+    private PetType type;
+
+    @ManyToOne
+    @JoinColumn(name = "owner_id")
+    private Owner owner;
+
 
     public PetType getType() {
         return type;

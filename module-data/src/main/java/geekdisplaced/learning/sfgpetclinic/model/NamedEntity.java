@@ -1,27 +1,20 @@
 package geekdisplaced.learning.sfgpetclinic.model;
 
+import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
 public class NamedEntity extends BaseEntity {
 
-    private String firstName;
-    private String lastName;
+    @Column(name = "name")
+    private String name;
 
 
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setName(String name) {
+        this.name = name;
     }
 }

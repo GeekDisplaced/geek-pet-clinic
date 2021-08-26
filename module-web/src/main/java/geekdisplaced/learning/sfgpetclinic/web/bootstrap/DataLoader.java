@@ -36,27 +36,27 @@ public class DataLoader implements CommandLineRunner {
     }
 
     private void loadData() {
-        PetType dog = new PetType();
-        dog.setName("Dog");
+        PetType petType1 = new PetType();
+        petType1.setName("Dog");
 
-        PetType savedDogPetType = petTypeService.save(dog);
+        PetType savedDogPetType = petTypeService.save(petType1);
 
-        PetType cat = new PetType();
-        cat.setName("Cat");
+        PetType petType2 = new PetType();
+        petType2.setName("Cat");
 
-        PetType savedCatPetType = petTypeService.save(cat);
+        PetType savedCatPetType = petTypeService.save(petType2);
 
         System.out.println("Loaded Pet Types... bootstrap data");
 
         Pet pet1 = new Pet();
-        pet1.setFirstName("Fluffy");
+        pet1.setName("Fluffy");
         pet1.setType(savedCatPetType);
         pet1.setBirthDate(LocalDate.of(2017,5,1));
 
         Pet savedPet1 = petService.save(pet1);
 
         Pet pet2 = new Pet();
-        pet2.setFirstName("Butch");
+        pet2.setName("Butch");
         pet2.setType(savedDogPetType);
         pet2.setBirthDate(LocalDate.of(2017,5,1));
 

@@ -1,21 +1,11 @@
 package geekdisplaced.learning.sfgpetclinic.model;
 
-public class PetType extends BaseEntity {
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
-    private String name;
+@Entity
+@Table(name = "types")
+public class PetType extends NamedEntity {
 
-    public PetType() {
-    }
 
-    public PetType(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }
