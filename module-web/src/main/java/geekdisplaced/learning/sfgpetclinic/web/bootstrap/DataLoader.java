@@ -49,14 +49,14 @@ public class DataLoader implements CommandLineRunner {
         System.out.println("Loaded Pet Types... bootstrap data");
 
         Pet pet1 = new Pet();
-        pet1.setName("Fluffy");
+        pet1.setFirstName("Fluffy");
         pet1.setType(savedCatPetType);
         pet1.setBirthDate(LocalDate.of(2017,5,1));
 
         Pet savedPet1 = petService.save(pet1);
 
         Pet pet2 = new Pet();
-        pet2.setName("Butch");
+        pet2.setFirstName("Butch");
         pet2.setType(savedDogPetType);
         pet2.setBirthDate(LocalDate.of(2017,5,1));
 

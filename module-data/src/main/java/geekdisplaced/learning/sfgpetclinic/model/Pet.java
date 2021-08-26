@@ -2,20 +2,11 @@ package geekdisplaced.learning.sfgpetclinic.model;
 
 import java.time.LocalDate;
 
-public class Pet extends BaseEntity {
+public class Pet extends NamedEntity {
 
-    private String name;
     private PetType type;
     private Owner owner;
     private LocalDate birthDate;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public PetType getType() {
         return type;
