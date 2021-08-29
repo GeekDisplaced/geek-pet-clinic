@@ -1,4 +1,8 @@
 package geekdisplaced.learning.sfgpetclinic.services.sdjpa;
 
-public abstract class SdjpaAbstractService {
+import geekdisplaced.learning.sfgpetclinic.model.BaseEntity;
+
+public abstract class SdjpaAbstractService<T extends BaseEntity, ID extends Long > {
+
+
 }

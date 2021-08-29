@@ -1,7 +1,12 @@
 package geekdisplaced.learning.sfgpetclinic.model;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.io.Serializable;
+
+@Getter
+@Setter
 
 @MappedSuperclass
 public class BaseEntity implements Serializable {
@@ -11,12 +16,4 @@ public class BaseEntity implements Serializable {
     @Column(name = "id")
     private Long Id;
 
-
-    public Long getId() {
-        return Id;
-    }
-
-    public void setId(Long id) {
-        Id = id;
-    }
 }
