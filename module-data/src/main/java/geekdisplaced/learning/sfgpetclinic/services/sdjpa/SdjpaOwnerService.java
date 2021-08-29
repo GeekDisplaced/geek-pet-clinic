@@ -37,12 +37,13 @@ public class SdjpaOwnerService extends SdjpaAbstractService implements OwnerServ
     @Override
     public Owner findById(Long id) {
 
-        return ownerRepository.findById(id).orElse();
+        return ownerRepository.findById(id).orElse(null);
     }
 
     @Override
     public Owner save(Owner object) {
 
+        // what about related elements, as was the requirement with map implementation
         return ownerRepository.save(object);
     }
 
