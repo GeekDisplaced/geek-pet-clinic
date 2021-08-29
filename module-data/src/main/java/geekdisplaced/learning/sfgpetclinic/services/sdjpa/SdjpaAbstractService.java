@@ -1,4 +1,4 @@
 package geekdisplaced.learning.sfgpetclinic.services.sdjpa;
 
-public class SdjpaAbstractService {
+public abstract class SdjpaAbstractService {
 }
