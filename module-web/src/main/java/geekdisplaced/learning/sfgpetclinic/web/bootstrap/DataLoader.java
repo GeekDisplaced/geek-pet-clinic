@@ -1,7 +1,7 @@
 package geekdisplaced.learning.sfgpetclinic.web.bootstrap;
 
-import geekdisplaced.learning.sfgpetclinic.model.*;
-import geekdisplaced.learning.sfgpetclinic.services.*;
+import geekdisplaced.learning.sfgpetclinic.data.model.*;
+import geekdisplaced.learning.sfgpetclinic.data.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -72,11 +72,11 @@ public class DataLoader implements CommandLineRunner {
 
         Specialty dentistry = new Specialty();
         surgery.setDescription("Dentistry");
-        Specialty savedSpecialty2 = specialtyService.save(surgery);
+        Specialty savedSpecialty2 = specialtyService.save(dentistry);
 
         Specialty radiology = new Specialty();
         surgery.setDescription("Radiology");
-        Specialty savedSpecialty3 = specialtyService.save(surgery);
+        Specialty savedSpecialty3 = specialtyService.save(radiology);
 
         System.out.println("Loaded Specialties... bootstrap data");
 

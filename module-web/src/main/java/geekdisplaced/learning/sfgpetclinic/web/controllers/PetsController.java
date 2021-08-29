@@ -1,6 +1,6 @@
 package geekdisplaced.learning.sfgpetclinic.web.controllers;
 
-import geekdisplaced.learning.sfgpetclinic.services.PetService;
+import geekdisplaced.learning.sfgpetclinic.data.services.PetService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
