@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.Set;
 
 @Service
-public class MapPetTypeService extends AbstractMapService<PetType, Long> implements PetTypeService {
+public class MapPetTypeService extends MapAbstractService<PetType, Long> implements PetTypeService {
 
 
     @Override
