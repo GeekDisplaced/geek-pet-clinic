@@ -16,6 +16,7 @@ public class SdjpaOwnerService extends SdjpaAbstractService implements OwnerServ
     private final OwnerRepository ownerRepository;
 
     public SdjpaOwnerService(OwnerRepository ownerRepository) {
+
         this.ownerRepository = ownerRepository;
     }
 

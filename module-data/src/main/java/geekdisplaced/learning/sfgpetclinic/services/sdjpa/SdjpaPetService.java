@@ -1,7 +1,7 @@
 package geekdisplaced.learning.sfgpetclinic.services.sdjpa;
 
 import geekdisplaced.learning.sfgpetclinic.model.Pet;
-import geekdisplaced.learning.sfgpetclinic.repositories.PetRepositiory;
+import geekdisplaced.learning.sfgpetclinic.repositories.PetRepository;
 import geekdisplaced.learning.sfgpetclinic.services.PetService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
@@ -13,9 +13,9 @@ import java.util.Set;
 @Profile("sdjpa")
 public class SdjpaPetService extends SdjpaAbstractService implements PetService {
 
-    private final PetRepositiory petRepositiory;
+    private final PetRepository petRepositiory;
 
-    public SdjpaPetService(PetRepositiory petRepositiory) {
+    public SdjpaPetService(PetRepository petRepositiory) {
         this.petRepositiory = petRepositiory;
     }
 
