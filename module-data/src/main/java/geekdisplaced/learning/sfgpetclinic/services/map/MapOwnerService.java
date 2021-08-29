@@ -5,11 +5,13 @@ import geekdisplaced.learning.sfgpetclinic.model.Pet;
 import geekdisplaced.learning.sfgpetclinic.services.OwnerService;
 import geekdisplaced.learning.sfgpetclinic.services.PetService;
 import geekdisplaced.learning.sfgpetclinic.services.PetTypeService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class MapOwnerService extends MapAbstractService<Owner, Long> implements OwnerService {
 
     private final PetTypeService petTypeService;

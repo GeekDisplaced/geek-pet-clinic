@@ -2,11 +2,13 @@ package geekdisplaced.learning.sfgpetclinic.services.map;
 
 import geekdisplaced.learning.sfgpetclinic.model.PetType;
 import geekdisplaced.learning.sfgpetclinic.services.PetTypeService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class MapPetTypeService extends MapAbstractService<PetType, Long> implements PetTypeService {
 
 
