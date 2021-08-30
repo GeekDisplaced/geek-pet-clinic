@@ -1,4 +1,4 @@
-package geekdisplaced.learning.sfgpetclinic.web.controllers;
+package geekdisplaced.learning.sfgpetclinic.controllers;
 
 import geekdisplaced.learning.sfgpetclinic.data.services.VetService;
 import org.springframework.stereotype.Controller;

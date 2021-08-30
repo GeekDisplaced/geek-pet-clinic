@@ -1,10 +1,10 @@
-package geekdisplaced.learning.sfgpetclinic.web;
+package geekdisplaced.learning.sfgpetclinic;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
-@SpringBootApplication(scanBasePackages = "geekdisplaced.learning.sfgpetclinic.*")
+@SpringBootApplication()
 public class PetClinicApplication {
 
     public static void main(String[] args) {
