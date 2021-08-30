@@ -1,4 +1,4 @@
-package geekdisplaced.learning.sfgpetclinic.web.bootstrap;
+package geekdisplaced.learning.sfgpetclinic.bootstrap;
 
 import geekdisplaced.learning.sfgpetclinic.data.model.*;
 import geekdisplaced.learning.sfgpetclinic.data.services.*;
@@ -55,14 +55,16 @@ public class DataLoader implements CommandLineRunner {
         pet1.setType(savedCatPetType);
         pet1.setBirthDate(LocalDate.of(2017,5,1));
 
-        Pet savedPet1 = petService.save(pet1);
+        //Following line would cause an error due to the CASCADE configuration in the Owner
+        //Pet savedPet1 = petService.save(pet1);
 
         Pet pet2 = new Pet();
         pet2.setName("Butch");
         pet2.setType(savedDogPetType);
         pet2.setBirthDate(LocalDate.of(2017,5,1));
 
-        Pet savedPet2 = petService.save(pet2);
+        //Following line would cause an error due to the CASCADE configuration in the Owner
+        //Pet savedPet2 = petService.save(pet2);
 
         System.out.println("Loaded Pets... bootstrap data");
 
@@ -88,7 +90,7 @@ public class DataLoader implements CommandLineRunner {
         owner1.setAddress("1 Infinite Loop");
         owner1.setCity("Silicon Vally");
         owner1.setTelephone("555-98721387431207");
-        owner1.getPets().add(savedPet1);
+        owner1.getPets().add(pet1);
 
         ownerService.save(owner1);
 
@@ -98,7 +100,7 @@ public class DataLoader implements CommandLineRunner {
         owner2.setAddress("1 Infinite Loop");
         owner2.setCity("Silicon Vally");
         owner2.setTelephone("555-98721387431207");
-        owner2.getPets().add(savedPet2);
+        owner2.getPets().add(pet2);
 
         ownerService.save(owner2);
 
@@ -122,14 +124,14 @@ public class DataLoader implements CommandLineRunner {
         System.out.println("Loaded Vets... bootstrap data");
 
         Visit visit1 = new Visit();
-        visit1.setPet(savedPet1);
+        visit1.setPet(pet1);
         visit1.setDate(LocalDate.now());
         visit1.setDescription("Sick Kitty");
 
         visitService.save(visit1);
 
         Visit visit2 = new Visit();
-        visit2.setPet(savedPet2);
+        visit2.setPet(pet2);
         visit2.setDate(LocalDate.now());
         visit2.setDescription("Swallowed tennis ball");
 
