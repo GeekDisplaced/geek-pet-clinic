@@ -1,1 +1,3 @@
-# geek-pet-clinic
+# geekdisplaced/learning-sfg-pet-clinic
+
+[![CircleCI](https://circleci.com/gh/GeekDisplaced/learning-sfg-pet-clinic/tree/main.svg?style=svg)](https://circleci.com/gh/GeekDisplaced/learning-sfg-pet-clinic/tree/main)
