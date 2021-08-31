@@ -87,6 +87,12 @@ public class MapOwnerService extends MapAbstractService<Owner, Long> implements 
 
     @Override
     public Owner findByLastName(String lastName) {
-        return null;
+        // straight copy solution, seems like it is not fit for purpose...
+        // What if multiple owners with lastName?
+        return this.findAll()
+                .stream()
+                .filter(owner -> owner.getLastName().equalsIgnoreCase(lastName))
+                .findFirst()
+                .orElse(null);
     }
 }
