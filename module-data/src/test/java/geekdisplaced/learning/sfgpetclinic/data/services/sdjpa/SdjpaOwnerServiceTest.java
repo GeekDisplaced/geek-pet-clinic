@@ -41,7 +41,7 @@ class SdjpaOwnerServiceTest {
     Owner existingOwner2;
     Owner createOwner3;
 
-    Set<Owner> existingOwners = new HashSet<>();
+    Set<Owner> existingOwners;
 
     Long absentOwner4Id;
     String absentOwner4LastName;
@@ -63,6 +63,8 @@ class SdjpaOwnerServiceTest {
         existingOwner2 = new Owner();
         existingOwner2.setId(existingOwner2Id);
         existingOwner2.setLastName(existingOwner2LastName);
+
+        existingOwners = new HashSet<>();
 
         existingOwners.add(existingOwner1);
         existingOwners.add(existingOwner2);
@@ -91,7 +93,7 @@ class SdjpaOwnerServiceTest {
         // code under test
         Owner mockReturnedOwner = sdjpaOwnerService.findByLastName(existingOwner1LastName);
 
-        // test
+        // test assertions
         assertEquals( existingOwner1LastName, mockReturnedOwner.getLastName());
         verify(ownerRepository, times(1)).findByLastName(any());
     }
@@ -104,7 +106,7 @@ class SdjpaOwnerServiceTest {
         // code under test
         Set<Owner> mockReturnedOwners = sdjpaOwnerService.findAll();
 
-        //test
+        //test assertions
         assertNotNull(existingOwners);
         assertEquals(2, mockReturnedOwners.size());
         verify(ownerRepository, times(1)).findAll();
@@ -130,7 +132,7 @@ class SdjpaOwnerServiceTest {
         // code under test
         Owner mockReturnedOwner = sdjpaOwnerService.findById(absentOwner4Id);
 
-        // test
+        // test assertions
         assertNull(mockReturnedOwner);
         verify(ownerRepository, times(1)).findById(any());
     }
@@ -156,7 +158,7 @@ class SdjpaOwnerServiceTest {
         // code under test
         sdjpaOwnerService.delete(existingOwner1);
 
-        // test
+        // test assertions
         verify(ownerRepository, times(1)).delete(any());
     }
 
@@ -168,7 +170,7 @@ class SdjpaOwnerServiceTest {
         // code under test
         sdjpaOwnerService.deleteById(existingOwner1Id);
 
-        // test
+        // test assertions
         verify(ownerRepository, times(1)).deleteById(any());
     }
 }
