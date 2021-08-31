@@ -2,8 +2,10 @@ package geekdisplaced.learning.sfgpetclinic.controllers;
 
 import geekdisplaced.learning.sfgpetclinic.data.model.Owner;
 import geekdisplaced.learning.sfgpetclinic.data.services.OwnerService;
+import net.bytebuddy.implementation.bind.annotation.IgnoreForBinding;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -152,6 +154,7 @@ class OwnersControllerTest {
     }
 
     @Test
+    @Disabled("Until implemented…")
     void findOwners() throws Exception{
         // mock behaviour
         when(ownerService.findAll()).thenReturn(existingOwners);
